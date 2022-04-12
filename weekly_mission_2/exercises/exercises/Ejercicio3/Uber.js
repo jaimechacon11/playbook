@@ -1,18 +1,22 @@
-const profile = {
-  name: "LaunchX",
-  author: "carlogilmar",
-  travel: "Veracruz",
-  favoritos: ["Sonora", "Chihuahua", "Chiapas"],
+class profile {
+  constructor() {
+    this.name = "LaunchX";
+    this.author = "carlogilmar";
+    this.travel = "Veracruz";
+    this.favoritos = ["Sonora", "Chihuahua", "Chiapas"];
+  }
 
-  getTravel: function () {
+  get getTravel() {
     return this.travel;
-  },
+  }
 
-  getFav: function () {
+  get getFav() {
     return `Mis lugares favoritos son ${this.favoritos}`;
-  },
-};
+  }
+}
 
-console.log("El perfil de " + profile.name);
-console.log("Su viaje es a " + profile.getTravel());
-console.log(profile.getFav());
+const perfil = new profile();
+
+console.log("El perfil de " + perfil.name);
+console.log("Su viaje es a " + perfil.getTravel);
+console.log(perfil.getFav);

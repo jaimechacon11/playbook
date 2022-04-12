@@ -1,20 +1,26 @@
-const repo = {
-  name: "LaunchX",
-  author: "carlogilmar",
-  language: "JavaScript",
-  numberOfCommits: 100,
-  stars: 199,
-  forks: 299,
-  issues_open: 10,
-  issues_close: 10,
-  getTotalIssues: function () {
-    return this.issues_open + this.issues_close;
-  },
-  getGeneralInfo: function () {
-    return `This repository ${this.name} was created by ${this.author}`;
-  },
-};
+class repo {
+  constructor() {
+    this.name = "LaunchX";
+    this.author = "carlogilmar";
+    this.language = "JavaScript";
+    this.numberOfCommits = 100;
+    this.stars = 199;
+    this.forks = 299;
+    this.issues_open = 10;
+    this.issues_close = 10;
+  }
 
-console.log("Nombre del repo:" + repo.name);
-console.log("Issues totales: " + repo.getTotalIssues());
-console.log(repo.getGeneralInfo());
+  get getTotalIssues() {
+    return this.issues_open + this.issues_close;
+  }
+
+  get getGeneralInfo() {
+    return `This repository ${this.name} was created by ${this.author}`;
+  }
+}
+
+const repositorio = new repo();
+
+console.log("Nombre del repo:" + repositorio.name);
+console.log("Issues totales: " + repositorio.getTotalIssues);
+console.log(repositorio.getGeneralInfo);

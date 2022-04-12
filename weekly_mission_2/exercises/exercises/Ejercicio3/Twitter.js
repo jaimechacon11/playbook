@@ -1,21 +1,24 @@
-const user = {
-  name: "LaunchX",
-  author: "carlogilmar",
-  language: "JavaScript",
-  hastags_good: 100,
-  hastags_bad: 10,
-  trending_topics: 199,
+class user {
+  constructor() {
+    this.name = "LaunchX";
+    this.author = "carlogilmar";
+    this.language = "JavaScript";
+    this.hastags_good = 100;
+    this.hastags_bad = 10;
+    this.trending_topics = 199;
+  }
 
-  gethastags: function () {
+  get gethastags() {
     return this.hastags_bad + this.hastags_good;
-  },
+  }
 
-  getTrending: function () {
+  get getTrending() {
     return `${this.name} tiene ${this.trending_topics} publicados por ${this.author}`;
-  },
-};
+  }
+}
 
-console.log(`Nombre del muro: `+user.name);
-console.log(`Los hastags que contiene son: `+user.gethastags());
-console.log(user.getTrending());
+const usuario = new user();
 
+console.log(`Nombre del muro: ` + usuario.name);
+console.log(`Los hastags que contiene son: ` + usuario.gethastags);
+console.log(usuario.getTrending);
